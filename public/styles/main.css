@@ -1,3 +1,13 @@
+#addPost{
+    display: flex;
+    justify-content: center;
+}
+
+#postbox-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .postbox {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -8,6 +18,12 @@
     width: 100%;
     margin: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+#postbox-container{
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -18,6 +34,13 @@ body {
     height: 100vh;
     margin: 0;
     transition: opacity 0.5s;
+}
+
+body h2{
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -41,6 +64,9 @@ body {
     margin: auto;
 }
 
+.h1{
+    font-size: 40px;
+}
 .navbar {
     background-color: black; 
     display: flex;
