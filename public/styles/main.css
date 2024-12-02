@@ -8,9 +8,9 @@
     width: 100%;
     margin: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+}
 
-  body {
+body {
     font-family: 'Red Rose';
     background-color: #696969; 
     display: flex;
@@ -19,7 +19,6 @@
     margin: 0;
     transition: opacity 0.5s;
 }
-
 
 .container {
     font-family: 'Red Rose';
@@ -73,7 +72,6 @@
     color:orange;
 
 }
-
 
 .h2 {
     color: white;
@@ -198,30 +196,39 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    
 }
 
-.left-section, .right-section {
+#categories, .right-section {
     display: grid;
     justify-content: center;
     gap: 20px;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     
 }
 
-.left-section{
-  background-color: #cfcfcf;
+#categories{
     color: black;
     border: none;
     border-radius: 20px;
     font-size: 32px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 250px;
     padding: 20px 20px;
+    align-items: center;
+    text-decoration: none;
 }
 
-.left-section button, .right-section button {
+#categories h3 {
+    text-align: center;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+#categories h3, .right-section button {
     background-color: #cfcfcf;
     color: black;
     border: none;
@@ -233,7 +240,7 @@ input[type="submit"]:hover {
     padding: 20px 20px;
 }
 
-.left-section button:hover, .right-section button:hover {
+#categories h3:hover, .right-section button:hover {
     background-color: #222222;
     color: orange;
 }
