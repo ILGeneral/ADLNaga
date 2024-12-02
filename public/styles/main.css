@@ -36,12 +36,6 @@ body {
     transition: opacity 0.5s;
 }
 
-body h2{
-    font-size: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .container {
     font-family: 'Red Rose';
