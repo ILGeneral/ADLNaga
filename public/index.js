@@ -217,7 +217,7 @@ try{
     console.log("DSADASDSA", e.data());
     const data = e.data();
     categoriesContainer.innerHTML += `
-    <a href='Categories/${data.subTitle}.html'>
+    <a style="text-decoration: none;"href='Categories/${data.subTitle}.html'>
     <div class='container_home'>
         <h3>${data.subTitle} </h3>
     </div>
