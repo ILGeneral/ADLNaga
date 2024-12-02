@@ -219,7 +219,7 @@ try{
     categoriesContainer.innerHTML += `
     <a href='Categories/${data.subTitle}.html'>
     <div class='container_home'>
-        <h3>${data.subTitle} </h3>
+        <a style="text-decoration: none;"href='Categories/${data.subTitle}.html'>
     </div>
     </a>
   `;
