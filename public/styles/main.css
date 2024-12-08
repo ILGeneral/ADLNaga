@@ -19,6 +19,8 @@
     margin: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
+    position: relative; /* For positioning the button */
+    overflow: hidden; 
 }
 
 #postbox-container{
