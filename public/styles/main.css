@@ -28,7 +28,7 @@
 
 body {
     font-family: 'Red Rose';
-    background-image: url('./assets/goldtech.png');
+    background-image: url('/assets/goldtech.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
