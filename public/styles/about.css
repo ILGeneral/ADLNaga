@@ -28,11 +28,14 @@ body {
     font-family: 'Red Rose';
 }
 
-.navbar a:hover {
-    text-decoration: underline; 
-    background-color: #444; 
+.navbar h1:hover {
+    color: orange;
 }
 
+.navbar a:hover {
+    background-color: #444; 
+    color:orange;
+}
 .h2 {
     color: white;
     text-align: center;
