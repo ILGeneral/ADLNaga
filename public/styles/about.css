@@ -1,7 +1,9 @@
 body {
     margin: 0;
     font-family: 'red rose';
-    background-color: #333;
+    background-image: url('/assets/goldtech.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
 }
 .navbar {
