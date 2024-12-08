@@ -16,7 +16,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
 
-    background-color: #3b3b3b; /* Background color for each post */
+    background-color: #dbdbdb; /* Background color for each post */
     border: 1px solid #fda707; /* Optional border around the post */
     border-radius: 4px; /* Rounded corners */
     padding: 15px; /* Padding inside the post */
