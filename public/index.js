@@ -171,26 +171,38 @@ try {
     });
   }
 
+  // Event delegation for delete button click
   container.addEventListener("click", async (event) => {
     if (event.target && event.target.classList.contains("delete-btn")) {
-        const postId = event.target.getAttribute("data-post-id");
-        const postRef = doc(db, "Categories", path, "posts", postId);
-        const postDoc = await getDoc(postRef);
+      const postId = event.target.getAttribute("data-post-id");
 
-        if (postDoc.exists()) {
-            const postData = postDoc.data();
-            if (postData.userId === user.uid) { // Check if the current user is the poster
-                if (confirm("Are you sure you want to delete this post?")) {
-                    await deleteDoc(postRef);
-                    const postElement = document.getElementById(`post-${postId}`);
-                    postElement.remove();
-                }
-            } else {
-                alert("You can only delete your own posts.");
-            }
+      console.log("Delete button clicked for post ID:", postId); // Log when button is clicked
+
+      if (confirm("Are you sure you want to delete this post?")) {
+        console.log("User confirmed deletion"); // Log when user confirms
+
+        try {
+          const postRef = doc(db, "Categories", path, "posts", postId);
+          console.log("Deleting post with reference:", postRef.path); // Log Firestore reference
+
+          // Delete the document from Firestore
+          await deleteDoc(postRef);
+          console.log(`Post ${postId} deleted from Firestore`);
+
+          // Remove the post from the DOM
+          const postElement = document.getElementById(`post-${postId}`);
+          postElement.remove();
+          console.log(`Post ${postId} removed from DOM`); // Log DOM removal
+        } catch (error) {
+          console.error("Error deleting post:", error); // Log errors if the deletion fails
         }
+      }
     }
-});
+  });
+
+} catch (error) {
+  console.error("Error fetching posts:", error);
+}
 
 // Fetch Categories for Homepage
 try {
