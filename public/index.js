@@ -124,7 +124,6 @@ try {
       postTitle: postTitle,
       postContent: postContent,
       createdAt: new Date(),
-      userId: user.uid
     };
     await setDoc(docRef, data);
 
