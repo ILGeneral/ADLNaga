@@ -228,7 +228,7 @@ try {
 
 console.log("Finished loading scripts.");
 
-const logoutButton = document.getElementById("Logout"); // Ensure this button exists in your HTML
+const logoutButton = document.getElementById("logoutBtn"); // Ensure this button exists in your HTML
 if (logoutButton) {
   logoutButton.addEventListener("click", async () => {
     try {
