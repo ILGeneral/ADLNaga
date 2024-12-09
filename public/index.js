@@ -228,6 +228,7 @@ try {
 
 console.log("Finished loading scripts.");
 
+//Logout
 document.getElementById("Logout").addEventListener("click", async (e) => {
   e.preventDefault();
   try {
