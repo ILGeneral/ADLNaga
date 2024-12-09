@@ -228,13 +228,16 @@ try {
 
 console.log("Finished loading scripts.");
 
-//Logout
-document.getElementById("Logout").addEventListener("click", async (e) => {
-  e.preventDefault();
-  try {
+const logoutButton = document.getElementById("Logout"); // Ensure this button exists in your HTML
+if (logoutButton) {
+  logoutButton.addEventListener("click", async () => {
+    try {
       await signOut(auth);
-      window.location.href = "index.html";  // Redirect to login page after logout
-  } catch (error) {
-      alert("Logout failed: " + error.message);
-  }
-});
+      alert("You have been logged out.");
+      window.location.href = "index.html"; // Redirect to the login page after logout
+    } catch (error) {
+      console.error("Error logging out:", error);
+      alert("Failed to log out. Please try again.");
+    }
+  });
+}
