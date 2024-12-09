@@ -241,3 +241,14 @@ if (logoutButton) {
     }
   });
 }
+
+// Listen for Auth State Changes
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("User is logged in:", user);
+    // Show logout button or personalized UI
+  } else {
+    console.log("No user is logged in.");
+    // Redirect to login page or show guest UI
+  }
+});
