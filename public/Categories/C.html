@@ -19,7 +19,14 @@
 
   <div id="dynamic-container"></div>
   <div id="postbox-container"></div>
-
+  <div class="comments-section" id="comments-${postId}">
+    <h4>Comments:</h4>
+    <div class="comments-container"></div>
+    <form class="comment-form" data-post-id="${postId}">
+      <textarea placeholder="Write a comment..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
 </body>
 <script type="module" src="/index.js"></script>
