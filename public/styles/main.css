@@ -337,6 +337,19 @@ input[type="submit"]:hover {
     }
 }
 
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(216, 148, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+    border-radius: 50%;
+  }
+
 .comments-section {
     margin-top: 20px;
     background-color: #f9f9f9;
