@@ -369,6 +369,7 @@ input[type="submit"]:hover {
 }
 
 #logoutBtn {
+    background-color: none;
     color: white; 
     text-decoration: none; 
     margin-left: 20px; 
