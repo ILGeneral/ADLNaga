@@ -367,3 +367,17 @@ input[type="submit"]:hover {
     margin: 5px 0;
     border-radius: 4px;
 }
+
+.logoutBtn {
+    color: white; 
+    text-decoration: none; 
+    margin-left: 20px; 
+    border-radius: 4px; 
+    padding: 5px 10px; 
+    font-family: 'Red Rose';
+}
+
+.logoutBtn:hover {
+    background-color: #444; 
+    color:orange;
+}
