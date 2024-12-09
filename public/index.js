@@ -228,4 +228,12 @@ try {
 
 console.log("Finished loading scripts.");
 
-
+document.getElementById("Logout").addEventListener("click", async (e) => {
+  e.preventDefault();
+  try {
+      await signOut(auth);
+      window.location.href = "index.html";  // Redirect to login page after logout
+  } catch (error) {
+      alert("Logout failed: " + error.message);
+  }
+});
