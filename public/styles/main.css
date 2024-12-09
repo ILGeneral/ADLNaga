@@ -368,7 +368,7 @@ input[type="submit"]:hover {
     border-radius: 4px;
 }
 
-.logoutBtn {
+.logoutButton {
     color: white; 
     text-decoration: none; 
     margin-left: 20px; 
@@ -377,7 +377,7 @@ input[type="submit"]:hover {
     font-family: 'Red Rose';
 }
 
-.logoutBtn:hover {
+.logoutButton:hover {
     background-color: #444; 
     color:orange;
 }
