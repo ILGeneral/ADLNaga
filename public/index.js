@@ -204,38 +204,6 @@ try {
   console.error("Error fetching posts:", error);
 }
 
-// Function to add comments
-async function addComment(postId, commentText) {
-    const commentsContainer = document.querySelector(`#comments-${postId} .comments-container`);
-    
-    // Create a new comment element
-    const commentElement = document.createElement('div');
-    commentElement.textContent = commentText;
-    commentsContainer.appendChild(commentElement);
-    
-    // Optionally, save the comment to Firestore
-    const commentsCollectionRef = collection(db, 'Categories', path, 'posts', postId, 'comments');
-    await setDoc(doc(commentsCollectionRef), {
-        text: commentText,
-        createdAt: new Date(),
-    });
-}
-
-// Event delegation for comment form submission
-document.getElementById('postbox-container').addEventListener('submit', async (event) => {
-    if (event.target.classList.contains('comment-form')) {
-        event.preventDefault();
-        
-        const postId = event.target.getAttribute('data-post-id');
-        const textarea = event.target.querySelector('textarea');
-        const commentText = textarea.value.trim();
-        
-        if (commentText) {
-            await addComment(postId, commentText);
-            textarea.value = ''; // Clear the textarea
-        }
-    }
-});
 
 // Fetch Categories for Homepage
 try {
