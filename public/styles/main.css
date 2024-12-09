@@ -349,3 +349,21 @@ input[type="submit"]:hover {
     z-index: 10;
     border-radius: 50%;
   }
+
+.comments-section {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.comments-container {
+    margin-top: 10px;
+}
+
+.comments-container div {
+    background-color: #e0e0e0;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
