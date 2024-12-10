@@ -254,7 +254,33 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+// Display comments
+        async function displayComments() {
+            commentsDiv.innerHTML = '';
+            try {
+                const querySnapshot = await getDocs(collection(db, `posts/${postId}/comments`));
+                querySnapshot.forEach((doc) => {
+                    const comment = doc.data();
+                    const commentDiv = document.createElement('div');
+                    commentDiv.textContent = comment.text;
+                    commentsDiv.appendChild(commentDiv);
+                });
+            } catch (error) {
+                console.error("Error fetching comments: ", error);
+            }
+        }
 
+        // Add a new comment
+        commentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const commentText = document.getElementById('comment').value;
 
-
-
+            try {
+                await addDoc(collection(db, `posts/${postId}/comments`), { text: commentText });
+                document.getElementById('comment').value = '';
+                displayComments();
+            } catch (error) {
+                console.error("Error adding comment: ", error);
+            }
+        });
+        displayComments();
