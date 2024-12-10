@@ -23,7 +23,7 @@
     margin: 15px 0; /* Space between each post */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
 
-    overflow: scroll; 
+    overflow-y: auto; 
     cursor: default;
 }
 
