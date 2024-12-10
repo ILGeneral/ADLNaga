@@ -252,3 +252,38 @@ onAuthStateChanged(auth, (user) => {
     // Redirect to login page or show guest UI
   }
 });
+
+const commentForm = document.querySelector(`.comment-form[data-post-id="${postId}"]`);
+    commentForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const commentText = commentForm.querySelector('textarea').value;
+
+        // Save comment to Firestore
+        await setDoc(doc(db, 'Categories', path, 'posts', postId, 'comments', new Date().toISOString()), {
+            text: commentText,
+            createdAt: new Date(),
+        });
+
+        // Clear the textarea
+        commentForm.querySelector('textarea').value = '';
+
+        // Fetch and display comments
+        displayComments(postId);
+    });
+
+    // Fetch and display existing comments
+    displayComments(postId);
+}
+
+async function displayComments(postId) {
+    const commentsContainer = document.getElementById(`comments-container-${postId}`);
+    commentsContainer.innerHTML = ''; // Clear existing comments
+
+    const commentsCollectionRef = collection(db, 'Categories', path, 'posts', postId, 'comments');
+    const querySnapshot = await getDocs(commentsCollectionRef);
+
+    querySnapshot.forEach((doc) => {
+        const commentData = doc.data();
+        commentsContainer.innerHTML += `<p>${commentData.text}</p>`;
+    });
+}
