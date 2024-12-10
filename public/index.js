@@ -1,3 +1,4 @@
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDocs, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
@@ -161,54 +162,13 @@ try {
       console.log("Fetched post data:", data); // Log post data for each post
 
       // Add the post's HTML with the delete button
-    function renderPost(data, postId) {
-    const container = document.getElementById('postbox-container');
       container.innerHTML += `
         <div class="postbox" id="post-${postId}">
           <h3>${data.postTitle}</h3>
           <p>${data.postContent}</p>
           <button class="delete-btn" data-post-id="${postId}">X</button>
-          <h4>Comments:</h4>
-              <div class="comments-container" id="comments-container-${postId}"></div>
-              <form class="comment-form" data-post-id="${postId}">
-                  <textarea placeholder="Write a comment..." required></textarea>
-                  <button type="submit">Submit</button>
-              </form>
         </div>
       `;
-      // Add event listener for the comment form
-    const commentForm = document.querySelector(`.comment-form[data-post-id="${postId}"]`);
-    commentForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const commentText = commentForm.querySelector('textarea').value;
-
-        // Save comment to Firestore
-        await setDoc(doc(db, 'Categories', path, 'posts', postId, 'comments', new Date().toISOString()), {
-            text: commentText,
-            createdAt: new Date(),
-        });
-
-      // Clear the textarea
-        commentForm.querySelector('textarea').value = '';
-
-        // Fetch and display comments
-        displayComments(postId);
-    });
-
-    // Fetch and display existing comments
-    displayComments(postId);
-}
-
-      async function displayComments(postId) {
-    const commentsContainer = document.getElementById(`comments-container-${postId}`);
-    commentsContainer.innerHTML = ''; // Clear existing comments
-
-    const commentsCollectionRef = collection(db, 'Categories', path, 'posts', postId, 'comments');
-    const querySnapshot = await getDocs(commentsCollectionRef);
-
-    querySnapshot.forEach((doc) => {
-        const commentData = doc.data();
-        commentsContainer.innerHTML += `<p>${commentData.text}</p>`;
     });
   }
 
