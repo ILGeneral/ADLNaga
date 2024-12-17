@@ -25,25 +25,28 @@ body {
 }
 
 .navbar h1 {
-    font-family: 'Red Rose';
-    color: white;
-    margin: 0;
+    color: white; 
+    margin: 0; 
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    border-radius: 4px;
-    padding: 5px 10px;
+    color: white; 
+    text-decoration: none; 
+    margin-left: 20px; 
+    border-radius: 4px; 
+    padding: 5px 10px; 
     font-family: 'Red Rose';
 }
 
-.navbar a:hover {
-    text-decoration: underline;
-    background-color: #444;
+.navbar h1:hover {
+    color: orange;
 }
 
+.navbar a:hover {
+    background-color: #444; 
+    color:orange;
+
+}
 .container {
     background-image: url('/assets/goldtech.png');
     background-repeat: no-repeat;
