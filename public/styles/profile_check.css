@@ -41,6 +41,11 @@ body {
     background-color: #444;
 }
 
+
+.navbar h1:hover {
+    color: orange;
+}
+
 .container {
     display: flex;
     flex: 1; 
