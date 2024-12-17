@@ -45,15 +45,21 @@ body {
 }
 
 .container {
-    font-family: 'Red Rose';
     background-image: url('/assets/goldtech.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-direction: column; 
-    height: 100vh;
-    margin: 0;
-    transition: opacity 0.5s;
+    display: flex;
+    flex: 1; 
+    flex-direction: row; 
+    margin-top: 50px; 
+    width: 100%; 
+    background-color: #4d4d4d;
+    padding: 20px;
+    justify-content: center; 
+    gap: 300px; 
+    align-items: stretch; 
+    box-sizing: border-box; 
 }
 
 .profile-message-container {
