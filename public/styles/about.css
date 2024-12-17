@@ -119,3 +119,21 @@ button {
 button:hover {
     background-color: #444; 
     color:orange;
+}
+
+#logoutBtn {
+    background-color: darkorange;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-family: 'Red Rose';
+    border: none;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+#logoutBtn:hover {
+    background-color: #444; 
+    color:orange;
+}
